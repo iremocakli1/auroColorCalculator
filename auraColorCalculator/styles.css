@@ -1,0 +1,315 @@
+body {
+    background-image: url('images/hol.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: 100% 100%;
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 50px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Burada flex-start kullanarak yazıyı yukarıya çekebilirsin */
+    height: 100vh;
+    box-sizing: border-box;
+    
+}
+
+  /* Stars */
+  .star {
+    position: absolute;
+    width: 2px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: twinkle 0.7s infinite;
+    z-index: 0;
+  }
+  
+  @keyframes twinkle {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.3;
+    }
+  }
+
+/* Konteyner */
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.85); /* Hafif saydamlık */
+    padding: 40px;
+    padding-top: 20px;
+    border-radius: 8px;
+    box-shadow: transparent;
+    width: 100%;
+    max-width: 500px;
+    border: none; /* Kenarlıkları kaldırdık */
+    background-color: transparent; /* Arka plan şeffaf oldu */
+    z-index: 1;
+}
+
+/* Başlık */
+h1 {
+    font-size: 18px; /* Normalde 18px olsun */
+    font-weight: 380;
+    color: rgb(118, 117, 117);
+    background-color: transparent; 
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: transparent;
+}
+/* Doğum Bilgileri Başlığı ve Reset İkonu */
+.birth-info-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #9b5ef0; /* Mor renkli çizgi */
+    padding-bottom: 10px;
+    
+}
+
+.birth-info-header h2 {
+    font-size: 22px;
+    
+    color: #9b5ef0;
+    margin: 0;
+    text-align: left;
+}
+
+#resetIcon {
+    font-size: 24px;
+    color: #9b5ef0;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+#resetIcon:hover {
+    color:  #7a49db; 
+}
+
+/* Doğum tarihi input alanı */
+.input-container {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+label {
+    font-size: 15px;
+    color: rgb(79, 78, 78);
+    margin-bottom: 10px;
+}
+
+input[type="date"] {
+    padding: 12px; /* Varsayılanı koruyalım */
+    font-size: 16px; /* Yazıyı büyütelim */
+    width: 100%; /* Genişlik tam olsun */
+    border-radius: 36px; /* Köşeleri yuvarlak */
+    border: transparent; /* Hafif bir çerçeve */
+    box-sizing: border-box; /* Kenar taşmalarını önler */
+    appearance: none; /* Varsayılan tarayıcı stilini kaldır */
+}
+
+/* Varsayılan olarak PC boyutunda mor border'ı bırakıyoruz */
+input[type="date"]:focus {
+    border-color: transparent;
+    outline: none; /* Odaklandığında dış çizgi kaldır */
+}
+
+/* Telefon boyutunda (max-width: 600px) border'ı kaldırıyoruz */
+@media (max-width: 600px) {
+    input[type="date"]:focus {
+        border-color: transparent; /* Mor sınır yerine şeffaf yapıyoruz */
+    outline: none;
+    }
+}
+
+
+/* Cinsiyet Seçimi */
+
+.gender-selection {
+    margin-bottom: 30px;
+}
+
+.gender-selection label {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.gender-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    
+}
+
+
+
+/* Cinsiyet butonları kare olacak ve çok açık lila renkte */
+button {
+    background-color:#f6f4ff;
+    border: 1px solid transparent; 
+    border-radius: 6px;
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+}
+/* Genel buton stilizasyonu */
+
+button[type="button"]:hover, button[type="submit"]:hover {
+    background-color: #7a49db; /* Hoverda koyu mor renk */
+}
+
+/* Submit butonu özel stil */
+
+#submit {
+    background-color: #b78ff7; /* Açık mor */
+    color: white; /* Yazı rengi beyaz */
+    border: 2px solid transparent; /* Canlı mor renkli kenarlık */
+    border-radius: 6px; /* Yuvarlatılmış köşeler */
+    padding: 10px 20px; /* İçerik boşluğu, yukarı/aşağı daha küçük */
+    font-size: 18px; /* Yazı boyutu */
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    margin-bottom: 1px; /* Buton altındaki boşluk */
+    width: 100%; /* Konteyner genişliği kadar genişlesin */
+    max-width: 300px; /* Maksimum genişliği 300px ile sınırlayın */
+    margin-left: auto; /* Sol kenarı otomatik ayarlayarak butonu ortalayın */
+    margin-right: auto; /* Sağ kenarı otomatik ayarlayarak butonu ortalayın */
+    height: 50px; /* Sabit yükseklik, dikeyde çok uzun olmaması için */
+}
+
+
+#submit:hover {
+    background-color: #9b5ef0; /* Hoverda daha koyu mor */
+    border-color: transparent; /* Border rengini koyu mor yap */
+}
+
+
+button img {
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+    background-color: transparent;
+    
+}
+
+/* Genel buton stilizasyonu */
+button[type="button"], button[type="submit"] {
+    background-color: #9b5ef0;
+    color: white;
+    padding: 12px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+button[type="button"]:hover, button[type="submit"]:hover {
+    background-color: #7e3af2;
+}
+
+/* Aura renk kutusu */
+#auraResult {
+    margin-top: 30px;
+}
+
+.auraColor {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-color: gray; /* Varsayılan renk */
+}
+
+#auraImage {
+    width: 150px;
+    height: 150px;
+    margin-top: 20px;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+/* Duyarlı tasarım */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 18px; /* Küçük ekranlarda boyut değişmesin */
+    }
+
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+/* Cinsiyet butonları ve ikonları */
+button img {
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+    background-color: transparent;
+    filter: brightness(0) saturate(100%) invert(37%) sepia(36%) saturate(2672%) hue-rotate(259deg) brightness(98%) contrast(101%); /* Mor renk filtresi */
+}
+
+/* Cinsiyet butonlarına ikonları kalınlaştırma */
+button img {
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+    background-color: transparent;
+    filter: brightness(0) saturate(100%) invert(37%) sepia(36%) saturate(2672%) hue-rotate(259deg) brightness(98%) contrast(101%); /* Mor renk filtresi */
+}
+
+button:hover img {
+    filter: brightness(0) saturate(100%) invert(37%) sepia(36%) saturate(2672%) hue-rotate(259deg) brightness(98%) contrast(101%); /* Hoverda daha canlı mor rengi */
+}
+
+button {
+    background-color: rgb(255, 255, 255); /* Açık mor arka plan */
+    border: 1px solid transparent; 
+    border-radius: 6px;
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 0 5px rgba(155, 94, 240, 0.6); /* Buton etrafında mor gölge */
+}
+
+button:hover {
+    background-color: #d1b5ff; /* Hoverda daha koyu mor */
+}
+
+/* Cinsiyet ikonlarının boyutlarını arttırma */
+button img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+}
+h2{
+    font-size: 15px;
+    color: #474646;
+    margin-bottom: 15px;
+    display: block;
+    font-weight: 400;
+}

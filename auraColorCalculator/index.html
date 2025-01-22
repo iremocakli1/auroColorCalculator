@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Rengini Öğren!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <!-- Başlık -->
+        <h1>Aura Rengini Öğren!</h1>
+
+        <!-- Doğum Bilgileri Başlığı ve Reset İkonu -->
+        <div class="birth-info-header">
+            <h2>Doğum Bilgileri</h2>
+            <i id="resetIcon" class="fas fa-sync-alt" onclick="resetForm()"></i>
+        </div>
+
+        <!-- Doğum Tarihi Input Alanı -->
+        <div class="input-container">
+            <label for="birthdate">Doğum Tarihinizi Girin:</label>
+            <input type="date" id="birthdate" oninput="validateDate(this)">
+
+        </div>
+
+        <!-- Cinsiyet Seçimi Butonu -->
+        <div class="gender-selection">
+            <label for="gender">Cinsiyetinizi Seçin:</label>
+            <div class="gender-buttons">
+                <button id="male" onclick="selectGender('male')">
+                    <img src="https://img.icons8.com/ios/452/male.png" alt="Eril" />
+                </button>
+                <button id="female" onclick="selectGender('female')">
+                    <img src="https://img.icons8.com/ios/452/female.png" alt="Dişil" />
+                </button>
+            </div>
+        </div>
+
+        <button onclick="calculateAura()" id="submit">Aura Rengini Göster</button>
+
+        <!-- Sonuçlar -->
+        <div id="auraResult" style="display:none;">
+            <h2>Aura Renginiz:</h2>
+            <!-- <div id="auraColor" class="auraColor"></div> -->
+            <img id="auraImage" src="" alt="Aura Resmi">
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
